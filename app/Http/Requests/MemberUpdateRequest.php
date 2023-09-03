@@ -22,7 +22,7 @@ class MemberUpdateRequest extends FormRequest
         return [
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:members,email'],
+            'email' => ['required', 'email', 'max:255', 'unique:members,email,'.$this->route('member')->id],
             'password' => ['required', 'string', 'max:255'],
             'remember_token' => ['nullable', 'string', 'max:100'],
             'phone' => ['nullable', 'string', 'max:20'],
